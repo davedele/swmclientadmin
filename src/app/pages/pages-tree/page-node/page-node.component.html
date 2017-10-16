@@ -1,0 +1,9 @@
+<ul class="list-group">
+    <li  *ngFor="let page of pages" class="list-group-item" [ngClass]="{'active':isActiveNode(page.id)}">
+      <span (click)="selectNode(page)" >{{page.title}}</span>
+      <button type="button" class="btn btn-default btn-xs" (click)="onAddClick(page);" title="New Child Page">
+        <span class="glyphicon glyphicon-plus"></span> 
+      </button>
+      <app-page-node [pages]="page.children" (nodeSelect)="onChildNodeSelect($event,page)"></app-page-node>
+    </li>
+  </ul>

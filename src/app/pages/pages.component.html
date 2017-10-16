@@ -1,0 +1,11 @@
+<div class="container-fluid">
+	<h1>Pages</h1>
+	<div class="row">
+		<div class="col-md-2">
+			<app-pages-tree (nodeSelect)="onPageSelected($event)" ></app-pages-tree>
+		</div>
+		<div class="col-md-10">
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+</div>

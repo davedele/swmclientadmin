@@ -1,0 +1,57 @@
+<div class="container-fluid">
+	<h1>User Profile</h1>
+	<form class="form-horizontal">
+		<fieldset>
+			<legend>Personal Information</legend>
+			<div class="form-group">
+				<label class="control-label sr-only col-xs-12">Name</label>
+				<div class="col-md-4">
+					<input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" placeholder="First Name" />
+				</div>
+				<div class="col-md-2">
+					<input type="text" class="form-control" name="middleName" [(ngModel)]="model.middleName" placeholder="Middle Name" />
+				</div>
+				<div class="col-md-4">
+					<input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" placeholder="Last Name" />
+				</div>
+			</div>
+			<div class="container-fluid">
+				<div class="form-group">
+					<label class="control-label sr-only">E-Mail</label>
+					<input type="email" class="form-control" name="email" [(ngModel)]="model.email" placeholder="E-Mail" />
+				</div>
+				<div class="form-group">
+					<label class="control-label sr-only">Phone</label>
+					<input type="phone" class="form-control" name="phone" [(ngModel)]="model.phone" placeholder="Phone Number" />
+				</div>
+				<div class="form-group">
+					<label class="control-label sr-only">About Me</label>
+					<textarea name="aboutMe" class="form-control" placeholder="About Me" name="aboutMe" [(ngModel)]="model.aboutMe"></textarea>
+				</div>
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend>User Credentials</legend>
+			<div class="container-fluid">
+				<div class="form-group">
+					<label class="control-label sr-only">User Name</label>
+					<input type="text" name="userName" class="form-control"  [(ngModel)]="model.userName" placeholder="User Name" />
+				</div>
+				<div class="form-group">
+					<label class="control-label sr-only">Password</label>
+					<input type="password" name="password" class="form-control" placeholder="Password" />
+				</div>
+				<div class="form-group">
+					<label class="control-label sr-only">Confirm Password</label>
+					<input type="password" name="passwordConfirm" class="form-control" placeholder="Confirm Password" />
+				</div>
+			</div>
+		</fieldset>
+		
+		<div class="form-group">
+			<div class="pull-right">
+				<button type="button" class="btn btn-primary" (click)="onSubmitClick()">Update</button>
+			</div>
+		</div>
+	</form>
+</div>

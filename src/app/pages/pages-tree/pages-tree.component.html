@@ -1,0 +1,12 @@
+<div class="tree">
+  <app-page-node [pages]="pages" (nodeSelect)="onPageNodeClick($event)"></app-page-node>
+  <ul>
+    <!-- <li><a routerLink="new">Add Page</a></li> -->
+    <li><span (click)="onAddClick($event)">Add Page</span></li>
+  </ul>
+  <ng-template #addPageContent >
+    <app-base-modal>
+    Add Page
+    </app-base-modal>
+  </ng-template>
+</div>

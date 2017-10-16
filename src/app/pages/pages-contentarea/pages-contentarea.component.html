@@ -1,0 +1,8 @@
+<div>
+  <div *ngFor="let content of contents">
+    <div *ngIf="content.pageContentArea === name">
+        <div class=""><button type="button" class="button mdl-button--primary" (click)="OnAddContent(name,-1)" >AddContent</button>
+        {{content.body}}
+      </div>
+  </div>
+</div>

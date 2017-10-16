@@ -1,0 +1,67 @@
+<div class="container-fluid">
+	<h1>Settings</h1>
+	<form class="form-horizontal">
+		<fieldset>
+			<legend>Site</legend>
+			<div class="container-fluid">
+				<div class="setting">
+					<div class="form-group">
+						<label class="control-label setting-label sr-only">Slogan</label>
+						<div class="setting-control">
+							<input type="text" class="form-control" name="slogan" [(ngModel)]="model.slogan" placeholder="Slogan" />
+						</div>
+					</div>
+				</div>
+				<div class="setting">
+					<div class="form-group">
+						<label class="control-label setting-label sr-only">Logo</label>
+						<div class="setting-control">
+							<input type="text" class="form-control" name="logo" [(ngModel)]="model.logoUrl" placeholder="Logo Url" />
+						</div>
+					</div>
+				</div>
+				<div class="setting">
+					<div class="form-group">
+						<label class="control-label setting-label sr-only">Contact E-Mail</label>
+						<div class="setting-control">
+							<input type="text" class="form-control" name="contactemail" [(ngModel)]="model.contactEmail" placeholder="Contact E-Mail" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend>Theme</legend>
+			<div class="container-fluid">
+				<div class="setting">
+					<div class="form-group">
+						<label class="control-label setting-label sr-only">Theme</label>
+						<div class="setting-control">
+							<input type="text" class="form-control" name="theme" [(ngModel)]="model.theme.name" placeholder="Theme" />
+						</div>
+					</div>
+				</div>
+			</div>
+        <fieldset>
+          <legend>Theme Options</legend>
+          <div class="container-fluid">
+            <div class="setting" *ngFor="let opt of model.theme.options" >
+              <div class="form-group">
+                <label class="control-label setting-label">{{opt.label}}</label>
+                <div class="setting-control">
+                  <input type="text" class="form-control" name="setting_{{opt.name}}" [(ngModel)]="opt.value" placeholder="{{opt.label}}" />
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </fieldset>
+		</fieldset>
+		
+		<div class="form-group">
+			<div class="pull-right">
+				<button type="button" class="btn btn-primary" (click)="onSubmitClick()">Update</button>
+			</div>
+		</div>
+	</form>
+</div>
