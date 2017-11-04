@@ -1,11 +1,26 @@
-<div class="container-fluid">
-	<h1>Pages</h1>
-	<div class="row">
-		<div class="col-md-2">
-			<app-pages-tree (nodeSelect)="onPageSelected($event)" ></app-pages-tree>
-		</div>
-		<div class="col-md-10">
-			<router-outlet></router-outlet>
-		</div>
-	</div>
-</div>
+<section class="content">
+
+  <header class="content__title">
+    <h1>Pages</h1>
+    <small>Welcome Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis unde, corporis aliquam, maiores dolor
+      odio adipisci quod ab deleniti architecto praesentium illo asperiores hic totam, magni ut modi quae quo?</small>
+    <nav aria-label="breadcrumb" role="navigation">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item" aria-current="page">Pages</li>
+      </ol>
+    </nav>
+  </header>
+
+  <div class="row">
+
+    <div class="col-md-2">
+      <app-pages-tree (nodeSelect)="onPageSelected($event)"></app-pages-tree>
+    </div>
+
+    <div class="col-md-10">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+
+</section>

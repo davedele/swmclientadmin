@@ -1,0 +1,82 @@
+@mixin floating-label-size($font-size, $height, $line-height, $padding-y) {
+  > label {
+    font-size: $font-size;
+    line-height: $line-height;
+    top: ($floating-label-font-size-focus + $padding-y);
+  }
+
+  &.has-value > label,
+  &.is-focused > label {
+    transform: scale($floating-label-font-size-focus / $font-size);
+  }
+}
+
+@mixin form-control-size($font-size, $height, $line-height, $padding-x, $padding-y) {
+  font-size: $font-size;
+  height: $height;
+  line-height: $line-height;
+  padding: $padding-y $padding-x ($padding-y - $textfield-border-width / $font-size-root * 1rem);
+}
+
+@mixin form-control-validation($color, $state) {
+  .custom-control-input {
+    .was-validated &:#{$state},
+    &.is-#{$state} {
+      ~ .custom-control-indicator,
+      ~ .custom-control-description {
+        color: $color;
+      }
+    }
+  }
+
+  .custom-file-input {
+    .was-validated &:#{$state},
+    &.is-#{$state} {
+      &:focus ~ .custom-file-control {
+        border-bottom-color: $color;
+        box-shadow: inset 0 ($textfield-border-width-focus * -1) 0 ($textfield-border-width * -1) $color;
+      }
+
+      ~ .custom-file-control {
+        border-color: $color;
+
+        @include hover {
+          border-bottom-color: $color;
+          box-shadow: inset 0 ($textfield-border-width-hover * -1) 0 ($textfield-border-width * -1) $color;
+        }
+      }
+
+      ~ .#{$state}-feedback,
+      ~ .#{$state}-tooltip {
+        display: block;
+      }
+    }
+  }
+
+  .custom-select,
+  .form-control {
+    .was-validated &:#{$state},
+    &.is-#{$state} {
+      border-color: $color;
+
+      @include focus-hover {
+        border-color: $color;
+        box-shadow: inset 0 ($textfield-border-width-hover * -1) 0 ($textfield-border-width * -1) $color;
+      }
+
+      ~ .#{$state}-feedback,
+      ~ .#{$state}-tooltip {
+        display: block;
+      }
+    }
+  }
+
+  .form-check-input {
+    .was-validated &:#{$state},
+    &.is-#{$state} {
+      + .form-check-label {
+        color: $color;
+      }
+    }
+  }
+}

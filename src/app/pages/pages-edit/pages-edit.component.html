@@ -1,38 +1,78 @@
 <div *ngIf="page">
-  <ul class="nav nav-tabs">
-    <li class="nav-item" [ngClass]="{active:activeTab === 'content'}" >
-      <a class="nav-link" href="#"(click)="toggleTab($event, 'content')">Content</a>
+  <ul class="nav nav-tabs nav-justified">
+    <li class="nav-item" [ngClass]="{active:activeTab === 'content'}">
+      <a class="nav-link active" href="#" (click)="toggleTab($event, 'content')">Active</a>
     </li>
-    <li class="nav-item" [ngClass]="{active:activeTab === 'settings'}" >
-      <a class="nav-link" href="#"(click)="toggleTab($event,'settings')">Settings</a>
+    <li class="nav-item" [ngClass]="{active:activeTab === 'settings'}">
+      <a class="nav-link" href="#" (click)="toggleTab($event,'settings')">Settings</a>
     </li>
   </ul>
   <div class="tabContainer">
+
     <div class="card" *ngIf="activeTab === 'content'">
-      <app-pages-edit-contents [page]="page" [layout]="layout" ></app-pages-edit-contents>
+      <app-pages-edit-contents [page]="page" [layout]="layout"></app-pages-edit-contents>
     </div>
+
     <div class="card" *ngIf="activeTab === 'settings'">
-      <form>
-      <div class="card-body">
-        <div class="form-group row">
-          <label class="control-label sr-only">Title</label>
-          <div class="setting-control">
-            <input type="text" class="form-control" name="title" [(ngModel)]="page.title" placeholder="Title" />
+
+      <div class="container">
+        <form class="mt-4 px-3">
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Title</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="title" [(ngModel)]="page.title" placeholder="Title" />
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label class="control-label sr-only">Url Path</label>
-          <div class="setting-control">
-            <input type="text" class="form-control" name="slug" [(ngModel)]="page.slug" placeholder="Url Path" />
+          <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Url Path</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="slug" [(ngModel)]="page.slug" placeholder="Url Path" />
+            </div>
           </div>
-        </div>
+          <!-- <fieldset class="form-group">
+              <div class="row">
+                <legend class="col-form-legend col-sm-2">Radios</legend>
+                <div class="col-sm-10">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked> Option one is this and that&mdash;be sure to include why it's great
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2"> Option two can be something else and selecting it will deselect option one
+                    </label>
+                  </div>
+                  <div class="form-check disabled">
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled> Option three is disabled
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div class="form-group row">
+              <div class="col-sm-2">Checkbox</div>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox"> Check me out
+                  </label>
+                </div>
+              </div>
+            </div> -->
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
-      <div class="card-foot">
-          <button type="submit" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-            Submit
-          </button>
-      </div>
-      </form>
+
     </div>
   </div>
+
+
 </div>

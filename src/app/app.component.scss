@@ -1,0 +1,22 @@
+// @import "./shared/sass/material";
+
+:hsot {
+  display: flex;
+  height: 100%;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+#wrapper {
+  display: flex;
+  flex: 1;
+  height: 100%;
+}
+// TODO
+.container-fluid {
+  padding: 25px;
+}

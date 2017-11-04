@@ -2,11 +2,16 @@
   <app-page-node [pages]="pages" (nodeSelect)="onPageNodeClick($event)"></app-page-node>
   <ul>
     <!-- <li><a routerLink="new">Add Page</a></li> -->
-    <li><span (click)="onAddClick($event)">Add Page</span></li>
+    <li>
+      <button class="btn btn-primary btn--icon" (click)="onAddClick($event)">
+        <i class="material-icons">add</i>
+      </button>
+    </li>
   </ul>
-  <ng-template #addPageContent >
+  <ng-template #addPageContent>
     <app-base-modal>
-    Add Page
+      add page..
     </app-base-modal>
   </ng-template>
+
 </div>

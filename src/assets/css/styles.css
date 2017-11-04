@@ -1,18 +1,18 @@
 .tree .list-group .list-group-item {
-	clear:both;
+  clear: both;
 }
 .tree .list-group .list-group-item .btn {
-	float:right;
+  float: right;
 }
 
-.tree .list-group>.list-group-item .list-group {
-	border-radius:0;
-	margin: 10px -15px -11px;
+.tree .list-group > .list-group-item .list-group {
+  border-radius: 0;
+  margin: 10px -15px -11px;
 }
 
-.tree .list-group>.list-group-item .list-group-item {
-	border-radius:0;
-	border-left:0;
-	border-right:0;
-	padding-left:30px;
+.tree .list-group > .list-group-item .list-group-item {
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  padding-left: 30px;
 }
